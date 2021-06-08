@@ -80,4 +80,20 @@
 
 ## [1.6.0]
 
-- Updated flutter_device_locale to support web
+- Web applications are now supported
+- Updated the examples with web support
+
+## [2.0.0]
+
+- Removed flutter_device_locale dependency
+- The native flutter locale retrieval method is now used
+- Added support for desktop
+- Added examples for windows desktop
+
+## [2.0.1]
+
+- Fixed web support
+
+## [3.0.0]
+
+- Null safety support

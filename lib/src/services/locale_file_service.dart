@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import 'constants.dart';
+import 'package:flutter_translate/src/constants/constants.dart';
 
 class LocaleFileService
 {
@@ -20,9 +20,11 @@ class LocaleFileService
         return files;
     }
 
-    static Future<String> getLocaleContent(String file) async
+    static Future<String?> getLocaleContent(String file) async
     {
-        return await rootBundle.loadString(file);
+        final ByteData? data = await rootBundle.load(file);
+        if (data == null) return null;
+        return utf8.decode(data.buffer.asUint8List());
     }
 
     static Future<List<String>> _getAllLocaleFiles(String basePath) async
@@ -56,7 +58,7 @@ class LocaleFileService
         return file;
     }
 
-    static String _getFilepath(String languageCode, String basePath)
+    static String? _getFilepath(String languageCode, String basePath)
     {
         var separator = basePath.endsWith('/') ? '' : '/';
 

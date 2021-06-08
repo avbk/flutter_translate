@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_translate/flutter_translate.dart';
+import 'package:flutter_translate/src/constants/constants.dart';
 import 'locale_file_service.dart';
-import 'constants.dart';
-import 'global.dart';
 
 class LocalizationConfiguration
 {
-    Map<Locale, String> _localizations;
+    Map<Locale, String>? _localizations;
 
-    Map<Locale, String> get localizations => _localizations;
+    Map<Locale, String>? get localizations => _localizations;
 
     final Locale fallbackLocale;
 
